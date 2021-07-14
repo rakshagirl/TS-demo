@@ -1,4 +1,5 @@
 import { withRouter } from "react-router-dom";
+import Journal from "./Journal";
 
 function Body() {
   
