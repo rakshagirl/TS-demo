@@ -8,9 +8,9 @@ function Journal() {
 
     return (
       <>
-      <Card variant='outlined'>
+      <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
-              <Typography color="primary">
+              <Typography>
                   <b>
                   Write down your travel thoughts here! It could be a 
                   favorite memory, recent trip experience, or any random 
