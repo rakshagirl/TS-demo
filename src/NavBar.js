@@ -4,6 +4,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
+import firebase from "firebase/app";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,11 +21,15 @@ const useStyles = makeStyles((theme) => ({
 export default function NavBar() {
   const classes = useStyles();
 
+  const signOut = () => {
+    firebase.auth().signOut()
+  }
+  
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Button color="inherit">Log Out</Button>
+          <Button color="inherit" onClick={signOut}>Log Out</Button>
         </Toolbar>
       </AppBar>
     </div>
