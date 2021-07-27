@@ -6,7 +6,7 @@ function Body() {
     return (
       <>  
       {/* if you want to return more than one thing */}
-              <Journal/>
+              Hello welcome to the website
            <br/>
       </>
     );

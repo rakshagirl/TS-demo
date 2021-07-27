@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import firebase from "firebase/app";
 
+
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
@@ -18,20 +19,22 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function NavBar() {
+function NavBar(props) {
   const classes = useStyles();
 
-  const signOut = () => {
-    firebase.auth().signOut()
-  }
+
   
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <Button color="inherit" onClick={signOut}>Log Out</Button>
+            <Button color="inherit" href="/" >Home</Button>
+            <Button color="inherit" href="/entries" >Journal Entries</Button>
+            <Button color="inherit" onClick={props.signOut}>Log Out</Button>
         </Toolbar>
       </AppBar>
     </div>
   );
 }
+
+export default NavBar;

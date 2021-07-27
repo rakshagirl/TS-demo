@@ -8,6 +8,7 @@ import "firebase/auth";
 import SignIn from "./SignIn";
 import firebase from "firebase/app";
 import React, {useState} from 'react';
+import { withRouter } from "react-router-dom";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAolP8hDSd2clBhrN47Ep95GEQyiGzGHmY",
@@ -20,7 +21,7 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-function App() {
+function App(props) {
   const [user, setUser] = useState(false);
   const [busy, setBusy] = useState(true);
   
@@ -38,12 +39,19 @@ function App() {
     setBusy(false);
   });
   
-  
+  const signOut = () => {
+    firebase.auth().signOut().then(() => {
+        props.history.push({
+            pathname: "/"
+        });
+        window.location.reload();
+    });
+  }
 
     return (
-        <div className="App" style={{ backgroundImage:`url(${pic})`, display: busy ? "none" : "" }}>
+        <div className="App" style={{ backgroundImage:`url(${pic})`, display: busy ? "none" : "", minHeight: "100vh" }}>
           
-          <Container maxWidth="md" style={{ backgroundColor: '#aed581' }}>
+          <Container maxWidth="md" style={{ backgroundColor: '#aed581', minHeight: "100vh" }}>
             <br/>
             <Typography color="primary" variant='h2' style={{paddingBottom: ".3em"}}>
                 <b>
@@ -54,7 +62,7 @@ function App() {
               <SignIn/>
               : 
               <div>
-              <NavBar/>
+              <NavBar signOut={signOut}/>
               <Router/>
               </div>}
             
@@ -63,4 +71,4 @@ function App() {
     );
 }
 
-export default App;
+export default withRouter(App);
