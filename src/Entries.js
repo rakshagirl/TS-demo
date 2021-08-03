@@ -7,16 +7,39 @@ import NavBar from "./NavBar";
 import "firebase/auth";
 import SignIn from "./SignIn";
 import firebase from "firebase/app";
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import { withRouter } from "react-router-dom";
-import Journal from "./Journal";
+import Entry from "./Entry";
 import Button from '@material-ui/core/Button';
 
 function Entries() {
+    const [entries, setEntries] = useState(null);
+
+    useEffect(() => {
+        var userId = firebase.auth().currentUser.uid;
+        var starCountRef = firebase.database().ref(userId + "/entries/");
+        starCountRef.on('value', (snapshot) => {
+            const data = snapshot.val();
+            setEntries(data);
+            console.log(data);
+        });
+    }, []);
+
+    function convertDate(UTCSec) {
+        var d = new Date(0);
+        d.setUTCSeconds(UTCSec);
+        return d.toLocaleString();
+    }
+
     return (
         <div>
             <Button color="secondary" variant="contained" size="large" href="/compose" >Create New Entry</Button>
-          <Journal/>
+          {entries != null ? Object.keys(entries).reverse().map((entry) => {
+              var date = convertDate(entry);
+              var text = entries[entry]['contents']['text'];
+
+              return <Entry date={date} text={text}/>
+          }) : null}
           
         </div>
     );
