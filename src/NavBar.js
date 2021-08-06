@@ -30,6 +30,7 @@ function NavBar(props) {
         <Toolbar>
             <Button color="inherit" href="/" >Home</Button>
             <Button color="inherit" href="/entries" >Journal Entries</Button>
+            <Button color="inherit" href="/inspiration" >Travel Inspiration</Button>
             <Button color="inherit" onClick={props.signOut}>Log Out</Button>
         </Toolbar>
       </AppBar>

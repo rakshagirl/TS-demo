@@ -34,6 +34,7 @@ function Entries() {
     return (
         <div>
             <Button color="secondary" variant="contained" size="large" href="/compose" >Create New Entry</Button>
+            <br></br>
           {entries != null ? Object.keys(entries).reverse().map((entry) => {
               var date = convertDate(entry);
               var text = entries[entry]['contents']['text'];
