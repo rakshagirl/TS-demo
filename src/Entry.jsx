@@ -8,15 +8,18 @@ function Entry(props) {
 
     return (
       <>
-      <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
+      
+      <Card width='10vw' variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  {props.date}:
+                  <b>{props.date} GST</b> 
+                  <br></br>
                   {props.text}
               </Typography>
               <br></br>
           </CardContent>
       </Card>
+      <br></br>
       </>
   
     );

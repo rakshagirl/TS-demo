@@ -21,15 +21,17 @@ function Body() {
           </CardContent>
       </Card>
       <br/>
-      <img src={travel} alt="Travel" width="80%" height="80%"/>
+      <Button color="primary" variant="contained" size="large" href="/entries" >Journal Entries</Button>
+      <br></br>
+      <br></br>
+      <Button color="secondary" variant="contained" size="large" href="/research" >Travel Research</Button>
+      <br></br>
+      <br></br>
+      <img src={travel} alt="Travel" width="90%" height="90%"/>
       <br/>     
            <br/>
 
-           <Button color="primary" variant="contained" size="large" href="/entries" >Journal Entries</Button>
-           <br></br>
-           <br></br>
-           <Button color="secondary" variant="contained" size="large" href="/inspiration" >Travel Inspiration</Button>
-           <br></br>
+           
       </>
     );
   }

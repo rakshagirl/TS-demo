@@ -2,8 +2,9 @@ import './App.css';
 import Typography from '@material-ui/core/Typography';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import TextField from '@material-ui/core/TextField';
 
-function Inspiration() {
+function Research() {
 
 
     return (
@@ -13,6 +14,7 @@ function Inspiration() {
               <Typography>
                   Stuck on where to travel next? Our Travel Inspiration generator is the answer for you!
               </Typography>
+              <TextField id="outlined-basic" label="Outlined" variant="outlined" />
               <br></br>
           </CardContent>
       </Card>
@@ -21,5 +23,5 @@ function Inspiration() {
     );
   }
   
-  export default Inspiration;
+  export default Research;
   
