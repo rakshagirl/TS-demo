@@ -25,9 +25,10 @@ function Research(props) {
               <Typography>
                   Stuck on where to travel next? Our Travel Inspiration generator is the answer for you!
               </Typography>
+              <br></br>
               <TextField 
                 id="outlined-basic" 
-                label="Outlined" 
+                label="Search a city or country" 
                 variant="outlined" 
                 onChange={(event) => setText(event.target.value)}/>
               <br></br>
@@ -35,6 +36,16 @@ function Research(props) {
               <Button color="secondary" variant="contained" size="large" onClick={onSubmit}>Submit</Button>
           </CardContent>
       </Card>
+      <br/>
+      {info === null ? null : <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
+          <CardContent>
+              <Typography>
+                  <b>{info['results'][0]['name']}</b>
+              </Typography>
+              
+          </CardContent>
+      </Card>}
+      
       </>
   
     );

@@ -12,7 +12,7 @@ function Entry(props) {
       <Card width='10vw' variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  <b>{props.date} GST</b> 
+                  <b>{props.date}</b> 
                   <br></br>
                   {props.text}
               </Typography>

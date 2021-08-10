@@ -28,7 +28,8 @@ function Entries() {
     function convertDate(UTCSec) {
         var d = new Date(0);
         d.setUTCSeconds(UTCSec);
-        return d.toLocaleString();
+        d.setHours(d.getHours() - d.getTimezoneOffset() / 60);
+        return (d).toLocaleString();
     }
 
     return (

@@ -34,6 +34,7 @@ function NavBar(props) {
             <Button color="inherit" onClick={props.signOut}>Log Out</Button>
         </Toolbar>
       </AppBar>
+      <br/>
     </div>
   );
 }

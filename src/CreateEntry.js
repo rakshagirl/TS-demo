@@ -63,6 +63,7 @@ const [text, setText] = useState("");
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
+        <br/><br/>
       <Button color="secondary" variant="contained" size="large" onClick={onSubmit}>Submit Entry</Button>
       <br></br>
       </>
