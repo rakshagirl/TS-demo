@@ -9,6 +9,15 @@ import SignIn from "./SignIn";
 import firebase from "firebase/app";
 import React, {useState} from 'react';
 import { withRouter } from "react-router-dom";
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Ubuntu',
+      'serif',
+    ].join(','),
+  },});
 
 const firebaseConfig = {
   apiKey: "AIzaSyAolP8hDSd2clBhrN47Ep95GEQyiGzGHmY",
@@ -49,14 +58,15 @@ function App(props) {
   }
 
     return (
+      <ThemeProvider theme={theme}>
         <div className="App" style={{ backgroundImage:`url(${pic})`, display: busy ? "none" : "", minHeight: "100vh" }}>
           
           <Container maxWidth="md" style={{ backgroundColor: '#aed581', minHeight: "100vh" }}>
             <br/>
-            <Typography color="primary" variant='h2' style={{paddingBottom: ".3em"}}>
-                <b>
-                  The Ultimate Travel Organizer
-                </b>
+            <Typography className="font-link" color="primary" variant='h2' style={{paddingBottom: ".3em"}}>
+                  <b>
+                    The Ultimate Travel Organizer
+                  </b>
             </Typography>
             {user == false ? 
               <SignIn/>
@@ -68,6 +78,7 @@ function App(props) {
             
           </Container>
         </div>
+      </ThemeProvider>
     );
 }
 

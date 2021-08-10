@@ -35,9 +35,8 @@ function Entries() {
         <div>
             <br></br>
             <Button color="secondary" variant="contained" size="large" href="/compose" >Create New Entry</Button>
-            <br></br>
-            <br></br>
             <Typography>
+            <h5><b>_________________________________________________________________</b></h5>
                 <h2><b>Here are your past entries:</b></h2>
             </Typography>
           {entries != null ? Object.keys(entries).reverse().map((entry) => {
