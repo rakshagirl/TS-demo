@@ -40,7 +40,7 @@ function Research(props) {
           </CardContent>
       </Card>
       <br/>
-      {info === null ? null : <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
+      {info === null || info['results'].length === 0 ? null : <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
                   <h2><b>{info['results'][0]['name']}</b></h2>

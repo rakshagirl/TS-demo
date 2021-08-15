@@ -15,9 +15,11 @@ function Entry(props) {
     }
 
     function deleteEntry() {
-        var userId = firebase.auth().currentUser.uid;
-        var ref = firebase.database().ref(userId + "/entries/" + props.date);
-        ref.remove();
+        if(window.confirm("Are you sure to want to delete this entry? ")){
+            var userId = firebase.auth().currentUser.uid;
+            var ref = firebase.database().ref(userId + "/entries/" + props.date);
+            ref.remove();
+        }
     }
 
     return (
