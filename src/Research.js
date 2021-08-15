@@ -43,7 +43,7 @@ function Research(props) {
       {info === null || info['results'].length === 0 ? null : <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  <h2><b>{info['results'][0]['name']}</b></h2>
+                  <h2><b>{info['results'][0]['name']}, {info['results'][0]['country_id']}</b></h2>
                   <b>Latitude: {info['results'][0]['coordinates']['latitude']} degrees </b> <br/>
                   <b>Longitude: {info['results'][0]['coordinates']['longitude']} degrees </b> <br/>
                   <h3>Description: </h3>

@@ -28,8 +28,7 @@ function Entry(props) {
       <Card width='10vw' variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  <b>{convertDate(props.date)}</b> 
-                  <br></br>
+                  <b><h4>{convertDate(props.date)}</h4></b> 
                   {props.text}
                   <br/><br/>
               </Typography>

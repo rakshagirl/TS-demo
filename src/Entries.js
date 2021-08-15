@@ -37,7 +37,7 @@ function Entries() {
             </Typography>
           {entries != null ? Object.keys(entries).reverse().map((entry) => {
               var text = entries[entry]['contents']['text'];
-
+                <br></br>
               return <Entry date={entry} text={text}/>
           }) : null}
           
