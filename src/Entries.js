@@ -25,12 +25,7 @@ function Entries() {
         });
     }, []);
 
-    function convertDate(UTCSec) {
-        var d = new Date(0);
-        d.setUTCSeconds(UTCSec);
-        d.setHours(d.getHours() - d.getTimezoneOffset() / 60);
-        return (d).toLocaleString();
-    }
+
 
     return (
         <div>
@@ -41,10 +36,9 @@ function Entries() {
                 <h2><b>Here are your past entries:</b></h2>
             </Typography>
           {entries != null ? Object.keys(entries).reverse().map((entry) => {
-              var date = convertDate(entry);
               var text = entries[entry]['contents']['text'];
 
-              return <Entry date={date} text={text}/>
+              return <Entry date={entry} text={text}/>
           }) : null}
           
         </div>

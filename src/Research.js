@@ -23,9 +23,12 @@ function Research(props) {
       <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  Stuck on where to travel next? Our Travel Inspiration generator is the answer for you!
+                  <b><h1>Travel Research</h1></b>
+                  Need some quick info on places to travel next? Our Travel Research generator is the answer for you!
+                  <br/>
+                  Don't know the exact spelling? No worries-- our algorithm is not case sensitive!
               </Typography>
-              <br></br>
+              <br/><br/>
               <TextField 
                 id="outlined-basic" 
                 label="Search a city or country" 
@@ -40,9 +43,17 @@ function Research(props) {
       {info === null ? null : <Card variant='outlined' style={{flex:1, backgroundColor:'#CFF3B6'}}>
           <CardContent>
               <Typography>
-                  <b>{info['results'][0]['name']}</b>
+                  <h2><b>{info['results'][0]['name']}</b></h2>
+                  <b>Latitude: {info['results'][0]['coordinates']['latitude']} degrees </b> <br/>
+                  <b>Longitude: {info['results'][0]['coordinates']['longitude']} degrees </b> <br/>
+                  <h3>Description: </h3>
+                  {info['results'][0]['snippet']} <br/> <br/>
+                  
               </Typography>
-              
+              <Typography>
+                    <b>{info['results'][0]['images'][0]['caption']}</b>
+              </Typography>
+              <img src={info['results'][0]['images'][0]['sizes']['medium']['url']}/>
           </CardContent>
       </Card>}
       
